@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.9);
+            color: white;
+            width: 100%;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+        }
+        nav {
+            width: 100%;
+            background: rgba(30, 41, 59, 0.9);
+            padding: 10px 0;
+            box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.3);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s, text-shadow 0.3s;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            color: #38bdf8;
+            text-shadow: 0px 0px 15px #38bdf8;
+            background: rgba(56, 189, 248, 0.2);
+        }
+        .content {
+            width: 75%;
+            background: rgba(30, 41, 59, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.5);
+            margin: 100px 0;
+            text-align: left;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .projects-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 80px;
+        }
+        .project-box {
+            background: rgba(56, 189, 248, 0.2);
+            padding: 30px 60px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(56, 189, 248, 0.5);
+            font-size: 18px;
+            font-weight: bold;
+            width: 300px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .left-boxes, .right-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            gap: 40px;
+        }
+        h1 {
+            color: #38bdf8;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        footer {
+            height: 50px;
+            background: rgba(30, 41, 59, 0.9);
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0px -4px 10px rgba(0, 255, 255, 0.3);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>Projects</header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>My Projects</h1>
+        <center><p>Here are some of the projects I’ve worked on so far. They helped me apply programming skills in real-world scenarios and deepen my understanding of core concepts.</p></center>
+        <br><br>
+        <div class="projects-wrapper">
+            <div class="left-boxes">
+                <div class="project-box"><b>Calculator</b><p> A basic arithmetic calculator created using shell scripting.</p></div>
+                <div class="project-box"><b>Food Management App</b><p>A conceptual app that connects hotels and restaurants with NGOs to donate surplus food.</p></div>
+            </div>
+            <div class="right-boxes">
+                <div class="project-box"><b>File Manager</b><p>A simple command-line based file manager to organize files in directories.</p></div>
+                <div class="project-box"><b>Digital Portfolio</b><p>Developed a responsive digital portfolio using HTML, CSS</p></div>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+</body>
+</html>

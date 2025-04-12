@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.9);
+            color: white;
+            width: 100%;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+        }
+        nav {
+            width: 100%;
+            background: rgba(30, 41, 59, 0.9);
+            padding: 10px 0;
+            box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.3);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s, text-shadow 0.3s;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            color: #38bdf8;
+            text-shadow: 0px 0px 15px #38bdf8;
+            background: rgba(56, 189, 248, 0.2);
+        }
+        .content {
+            width: 75%;
+            background: rgba(30, 41, 59, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.5);
+            margin: 100px 0;
+            text-align: left;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .skill-box {
+            background: rgba(56, 189, 248, 0.2);
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(56, 189, 248, 0.5);
+            font-size: 18px;
+            font-weight: bold;
+            width: 300px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #38bdf8;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 28px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        footer {
+            height: 50px;
+            background: rgba(30, 41, 59, 0.9);
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0px -4px 10px rgba(0, 255, 255, 0.3);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>Skills</header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>My Skills</h1>
+        <center><p>As a passionate and curious engineering student, I’ve developed foundational technical skills that I'm continuously improving through hands-on projects and learning platforms.</p></center><br><br>
+
+        <div class="skills-wrapper">
+            <div class="skill-box"><b>HTML & CSS</b><p>Creating simple and responsive web pages</p></div>
+            <div class="skill-box"><b>Linux</b><p>Basic command line usage and scripting</p></div>
+            <div class="skill-box"><b>Python</b><p>Beginner level-working with basic scripts</p></div>
+            <div class="skill-box"><b>C Programming</b><p>Good understanding of fundamentals and logic building</p></div>
+        </div><br><br>
+      <p><b>🤝 Soft Skills :</b><br>
+         <b>Communication</b> : Able to explain technical concepts clearly.<br>
+
+          <b>Teamwork</b> : Participated in group assignments and college events.<br>
+
+          <b>Time Management</b> : Prioritizing tasks to meet academic and personal project deadlines.<br>
+
+          <b>Adaptability </b> : Quick to learn new tools and technologies.
+    </div>
+
+    <footer></footer>
+</body>
+</html>

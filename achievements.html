@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.9);
+            color: white;
+            width: 100%;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+        }
+        nav {
+            width: 100%;
+            background: rgba(30, 41, 59, 0.9);
+            padding: 10px 0;
+            box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.3);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s, text-shadow 0.3s;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            color: #38bdf8;
+            text-shadow: 0px 0px 15px #38bdf8;
+            background: rgba(56, 189, 248, 0.2);
+        }
+        .content {
+            width: 90%;
+            background: rgba(30, 41, 59, 0.9);
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.5);
+            margin: 100px 0;
+            text-align: left;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .achievements-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 100px;
+        }
+        .achievement-box {
+            background: rgba(56, 189, 248, 0.2);
+            padding: 40px 60px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(56, 189, 248, 0.5);
+            font-size: 18px;
+            font-weight: bold;
+            width: 400px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .left-boxes, .right-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            gap: 50px;
+        }
+        h1 {
+            color: #38bdf8;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        footer {
+            height: 50px;
+            background: rgba(30, 41, 59, 0.9);
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0px -4px 10px rgba(0, 255, 255, 0.3);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>Achievements</header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>My Achievements</h1>
+        <center><p>Here are some of my notable achievements that highlight my skills and dedication.</p></center>
+       <center><p>Click on heading to view Certificate</p></center>
+        <br><br>
+        <div class="achievements-wrapper">
+            <div class="left-boxes">
+                <div class="achievement-box"><b><a href="https://lms.simplilearn.com/courses/7220/Introduction-to-Kali-Linux-Basics/certificate/download-skillup" style="color: #38bdf8; text-decoration: none;">Kali Linux Certification</a></b><p>Completed a foundational course in Kali Linux, gaining hands-on experience with ethical hacking tools and penetration testing techniques.</p></div>
+                <div class="achievement-box"><b><a href="https://www.udemy.com/certificate/UC-c27020a0-e077-4a34-a6a5-7b561338cacd/" style="color: #38bdf8; text-decoration: none;">Python Certification</a></b><p>Completed a certified Python Programming course, learning about variables, data structures, loops, functions, and basic projects.</p></div>
+                <div class="achievement-box"><b><a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-1ed69ac1-461f-4824-92fe-f8ca8929bd3e.pdf" style="color: #38bdf8; text-decoration: none;">C Programming Certification</a></b><p>Completed a beginner-level course in C programming, covering syntax, control statements, loops, arrays, and functions. Developed basic programs to understand the logic and structure of low-level programming.
+
+</p></div>
+            </div>
+            <div class="right-boxes">
+                <div class="achievement-box"><b><a href="https://skillshop.exceedlms.com/student/award/2Y3Rb7criQ6mQY1uZ8gfLChb" style="color: #38bdf8; text-decoration: none;">Digital Marketing Certification</a></b><p>Earned a certification in Digital Marketing, covering SEO, content marketing, social media strategies, and analytics.</p></div>
+                <div class="achievement-box"><b><a href="https://www.udemy.com/certificate/UC-49075b1d-8e33-4dc9-84e6-503f4c2a3b50/" style="color: #38bdf8; text-decoration: none;">Vedic Mathematician</a></b><p>Successfully completed the Vedic Speed Mathematics course, improving mental math skills and boosting logical reasoning.</p></div>
+                <div class="achievement-box"><b><a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-e0a3ceeb-620b-4c4b-af50-5e0e608cac0d.pdf" style="color: #38bdf8; text-decoration: none;">C# Programming Certification</a></b><p>Successfully completed a beginner-level course in C# programming. Gained knowledge of object-oriented programming concepts, syntax, and developed small desktop applications using Windows Forms.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+</body>
+</html>
