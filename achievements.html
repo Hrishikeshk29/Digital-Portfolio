@@ -49,53 +49,67 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            transition: color 0.3s, text-shadow 0.3s;
             padding: 10px;
             border-radius: 5px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, #38bdf8, #0ea5e9);
+            transition: width 0.3s ease;
+            border-radius: 5px;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
         }
         nav ul li a:hover {
             color: #38bdf8;
-            text-shadow: 0px 0px 15px #38bdf8;
-            background: rgba(56, 189, 248, 0.2);
+            text-shadow: 0 0 10px #38bdf8;
+            background: rgba(56, 189, 248, 0.15);
         }
         .content {
-            width: 90%;
+            width: 1100px;
             background: rgba(30, 41, 59, 0.9);
             padding: 60px;
             border-radius: 15px;
             box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.5);
             margin: 100px 0;
-            text-align: left;
             animation: fadeIn 1s ease-in-out;
         }
         .achievements-wrapper {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            gap: 100px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px 100px;
         }
         .achievement-box {
-            background: rgba(56, 189, 248, 0.2);
-            padding: 40px 60px;
-            border-radius: 12px;
+            background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
+            padding: 30px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0px 0px 15px rgba(56, 189, 248, 0.5);
-            font-size: 18px;
+            box-shadow: 0px 0px 20px rgba(56, 189, 248, 0.4);
+            font-size: 22px;
+            width: 440px;           /* Fixed width */
+            height: 110px;  
             font-weight: bold;
-            width: 400px;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            color: white;
         }
-        .left-boxes, .right-boxes {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 50%;
-            gap: 50px;
+        .view-certificate, .view-more-btn {
+            margin-top: 10px;
+            text-decoration: none;
+            background: #38bdf8;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: inline-block;
         }
         h1 {
             color: #38bdf8;
@@ -104,7 +118,8 @@
             font-size: 30px;
         }
         p {
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: normal;
             line-height: 1.6;
         }
         footer {
@@ -114,6 +129,10 @@
             margin-top: auto;
             box-shadow: 0px -4px 10px rgba(0, 255, 255, 0.3);
         }
+        #more-achievements {
+            display: none;
+            margin-top: 30px;
+        }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -121,38 +140,94 @@
     </style>
 </head>
 <body>
-    <header>Achievements</header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="content">
-        <h1>My Achievements</h1>
-        <center><p>Here are some of my notable achievements that highlight my skills and dedication.</p></center>
-       <center><p>Click on heading to view Certificate</p></center>
-        <br><br>
+<header>Achievements</header>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+    </ul>
+</nav>
+<div class="content">
+    <h1>My Achievements</h1>
+    <center><p>Here are some of my notable achievements that highlight my skills and dedication.</p></center>
+    <br><br>
+    <div class="achievements-wrapper">
+        <div class="achievement-box">
+            <b>DEVOPS DECODE: Hands-on Fundamentals</b>
+            <div><a class="view-certificate" href="https://drive.google.com/file/d/19dEG0XU7PGPpLWjyXXzp705490hmtnpv/view?usp=sharing" target="_blank">View Certificate</a></div>
+        </div>
+        <div class="achievement-box">
+            <b>Kali Linux </b>
+            <div><a class="view-certificate" href="https://drive.google.com/file/d/11pGwLq-BK-0mMjr0KOuG6e86J8h1RLv-/view?usp=sharing" target="_blank">View Certificate</a></div>
+        </div>
+        <div class="achievement-box">
+            <b>C Programming </b>
+            <div><a class="view-certificate" href="https://drive.google.com/file/d/1jlGH4y6ZP2vg6sH1vqelw7IW0UiUG7L_/view?usp=sharing" target="_blank">View Certificate</a></div>
+        </div>
+        <div class="achievement-box">
+            <b id="toggle-box-text">View More</b>
+            <div><a id="view-toggle-button" class="view-more-btn" href="javascript:void(0)" onclick="toggleMoreAchievements()">View More</a></div>
+        </div>
+    </div>
+    <div id="more-achievements">
         <div class="achievements-wrapper">
-            <div class="left-boxes">
-                <div class="achievement-box"><b><a href="https://lms.simplilearn.com/courses/7220/Introduction-to-Kali-Linux-Basics/certificate/download-skillup" style="color: #38bdf8; text-decoration: none;">Kali Linux Certification</a></b><p>Completed a foundational course in Kali Linux, gaining hands-on experience with ethical hacking tools and penetration testing techniques.</p></div>
-                <div class="achievement-box"><b><a href="https://www.udemy.com/certificate/UC-c27020a0-e077-4a34-a6a5-7b561338cacd/" style="color: #38bdf8; text-decoration: none;">Python Certification</a></b><p>Completed a certified Python Programming course, learning about variables, data structures, loops, functions, and basic projects.</p></div>
-                <div class="achievement-box"><b><a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-1ed69ac1-461f-4824-92fe-f8ca8929bd3e.pdf" style="color: #38bdf8; text-decoration: none;">C Programming Certification</a></b><p>Completed a beginner-level course in C programming, covering syntax, control statements, loops, arrays, and functions. Developed basic programs to understand the logic and structure of low-level programming.
-
-</p></div>
+            <div class="achievement-box">
+                <b>C# Certification</b>
+                <div><a class="view-certificate" href="https://drive.google.com/file/d/1AL5vNhUui1kr3sWzkFdk0-AfXM5UqI7y/view?usp=sharing" target="_blank">View Certificate</a></div>
             </div>
-            <div class="right-boxes">
-                <div class="achievement-box"><b><a href="https://skillshop.exceedlms.com/student/award/2Y3Rb7criQ6mQY1uZ8gfLChb" style="color: #38bdf8; text-decoration: none;">Digital Marketing Certification</a></b><p>Earned a certification in Digital Marketing, covering SEO, content marketing, social media strategies, and analytics.</p></div>
-                <div class="achievement-box"><b><a href="https://www.udemy.com/certificate/UC-49075b1d-8e33-4dc9-84e6-503f4c2a3b50/" style="color: #38bdf8; text-decoration: none;">Vedic Mathematician</a></b><p>Successfully completed the Vedic Speed Mathematics course, improving mental math skills and boosting logical reasoning.</p></div>
-                <div class="achievement-box"><b><a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-e0a3ceeb-620b-4c4b-af50-5e0e608cac0d.pdf" style="color: #38bdf8; text-decoration: none;">C# Programming Certification</a></b><p>Successfully completed a beginner-level course in C# programming. Gained knowledge of object-oriented programming concepts, syntax, and developed small desktop applications using Windows Forms.</p></div>
+            <div class="achievement-box">
+                <b>Python</b>
+                <div><a class="view-certificate" href="https://drive.google.com/file/d/1iyVebou5fEBN0KnzKjrhpNUjgOPp36VU/view?usp=sharing" target="_blank">View Certificate</a></div>
+            </div>
+            <div class="achievement-box">
+                <b>Python Essentials 1</b>
+                <div><a class="view-certificate" href="https://drive.google.com/file/d/1VCK2T21fbdhFTyoThui8hEodSkHFkwG-/view?usp=sharing" target="_blank">View Certificate</a></div>
+            </div>
+            <div class="achievement-box">
+                <b>Python Essentials 2</b>
+                <div><a class="view-certificate" href="https://drive.google.com/file/d/1keKWyG9WtzvQYn13lTnYc0s5QYf0esWS/view?usp=sharing" target="_blank">View Certificate</a></div>
+            </div>
+            <div class="achievement-box">
+                <b>Vedic Mathematician</b>
+                <div><a class="view-certificate" href="https://drive.google.com/file/d/1mRTZMTnIxle97VbIpQO6Ql17uDgui29W/view?usp=sharing" target="_blank">View Certificate</a></div>
+            </div>
+            <div class="achievement-box">
+                <b>Fundamentals of digital marketing</b>
+                <div><a class="view-certificate" href="https://drive.google.com/file/d/1qiMl6PPg3-7O7TLgomGMgqNQF4ry_lLX/view?usp=sharing" target="_blank">View Certificate</a></div>
+            </div>
+          <div class="achievement-box">
+                <b>Artificial Intelligence</b>
+                <div><a class="view-certificate" href="https://drive.google.com/file/d/1ARzsbessRFnkxY7Uek9McflQ-o14lVIx/view?usp=sharing" target="_blank">View Certificate</a></div>
+            </div>
+          <div class="achievement-box">
+                <b>Journey to Cloud: Envisioning Your Solution</b>
+                <div><a class="view-certificate" href="https://drive.google.com/file/d/1qeQ8pG8ZGN9-R1CbEX8H8n17AQ9cHxCH/view?usp=sharing" target="_blank">View Certificate</a></div>
+            </div>
+           <div class="achievement-box">
+                <b>Introduction to Cybersecurity</b>
+                <div><a class="view-certificate" href="https://drive.google.com/file/d/1c9QxLqClrChr9l2UDSDR-slnl8IZtZQ1/view?usp=sharing" target="_blank">View Certificate</a></div>
+            </div>
+           <div class="achievement-box">
+                <b>Networking Certification</b>
+                <div><a class="view-certificate" href="https://drive.google.com/file/d/1AxBDZ4iB9ygl45orjBe5CVdL5kmbvLTf/view?usp=sharing" target="_blank">View Certificate</a></div>
             </div>
         </div>
     </div>
+</div>
+<footer></footer>
+<script>
+    function toggleMoreAchievements() {
+        const section = document.getElementById("more-achievements");
+        const toggleText = document.getElementById("toggle-box-text");
+        const toggleBtn = document.getElementById("view-toggle-button");
+        const isHidden = section.style.display === "none" || section.style.display === "";
 
-    <footer></footer>
+        section.style.display = isHidden ? "block" : "none";
+        toggleText.innerText = isHidden ? "View Less" : "View More";
+        toggleBtn.innerText = isHidden ? "View Less" : "View More";
+    }
+</script>
 </body>
 </html>
