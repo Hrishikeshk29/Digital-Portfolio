@@ -62,15 +62,35 @@
             gap: 25px;
         }
         nav ul li a {
+            position: relative;
             color: white;
             text-decoration: none;
             font-size: 20px;
             font-weight: bold;
-            transition: color 0.3s, text-shadow 0.3s;
+            padding: 10px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            background-color: #38bdf8;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease-in-out;
+        }
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
         nav ul li a:hover {
             color: #38bdf8;
-            text-shadow: 0px 0px 12px #38bdf8;
+            background-color: rgba(56, 189, 248, 0.1);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
         }
         .portfolio-container {
             display: flex;
@@ -94,6 +114,20 @@
         .text-content h2 {
             color: #38bdf8;
             font-size: 28px;
+        }
+        .download-resume {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background-color: #38bdf8;
+            color: #0f172a;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .download-resume:hover {
+            background-color: #0ea5e9;
         }
         .profile-pic {
             width: 320px;
@@ -132,16 +166,17 @@
     <nav>
         <ul>
             <li><a href="about.html">About</a></li>
+            <li><a href="experience.html">Experience</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="achievements.html">Achievements</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    
+
     <div class="marquee">
         <span>🚀 Elevate Your Digital Presence – Explore My Portfolio! 🚀</span>
     </div>
-    
+
     <div class="portfolio-container">
         <div class="text-content">
             <h1>Hello, It's Me</h1>
@@ -149,6 +184,8 @@
             <p>And I'm an <span style="color: #38bdf8; font-weight: bold;">Engineering student</span></p>
             <p>Passionate about Data Science, Web Development and Logical problem-solving.</p>
             <p>Eager to learn new things, new skills etc.</p>
+            <a class="download-resume" href="resume.pdf" download>Download Resume</a>
+
             <div class="social-icons">
                 <a href="mailto:koshtihrishikesh41@gmail.com" target="_blank">
                     <img src="google-mail-gmail-icon-logo-symbol-free-png.webp" alt="Gmail">
@@ -156,13 +193,14 @@
                 <a href="https://www.linkedin.com/in/hrishikesh-koshti-506107334/" target="_blank">
                     <img src="hd_resized_linkedin_logo.jpg" alt="LinkedIn">
                 </a>
-               <a href="https://github.com/Hrishikeshk29" target="_blank">
+                <a href="https://github.com/Hrishikeshk29" target="_blank">
                     <img src="github.jpg" alt="GitHub">
+                </a>
             </div>
         </div>
         <div class="profile-pic"></div>
     </div>
-    
+
     <footer></footer>
 </body>
 </html>
