@@ -18,7 +18,7 @@
             min-height: 100vh;
         }
         header {
-            padding: 20px;
+            padding: 40px;
             background: rgba(30, 41, 59, 0.9);
             color: white;
             width: 100%;
@@ -47,19 +47,38 @@
             display: inline;
         }
         nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s, text-shadow 0.3s;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        nav ul li a:hover {
-            color: #38bdf8;
-            text-shadow: 0px 0px 15px #38bdf8;
-            background: rgba(56, 189, 248, 0.2);
-        }
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+        nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #38bdf8;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+nav ul li a:hover {
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.1);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
         .content {
             width: 75%;
             background: rgba(30, 41, 59, 0.9);
@@ -71,28 +90,54 @@
             animation: fadeIn 1s ease-in-out;
         }
         .skills-wrapper {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 50px;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-        }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
         .skill-box {
-            background: rgba(56, 189, 248, 0.2);
-            padding: 20px 40px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0px 0px 15px rgba(56, 189, 248, 0.5);
-            font-size: 18px;
-            font-weight: bold;
-            width: 300px;
-            height: 80px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin: 0 auto;
-        }
+  width: 100%;
+  max-width: 360px;
+  
+  
+  height: 180px;
+
+  perspective: 1000px;
+  position: relative;
+}
+.skill-box .front, .skill-box .back {
+  background: linear-gradient(145deg, #1e3a8a, #3b82f6);
+  border-radius: 10px;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  width: 400px;
+  height: 170px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5);
+  transition: transform 0.6s ease;
+}
+.skill-box .back {
+  transform: rotateY(180deg);
+  font-size: 22px;
+  font-weight: normal;
+  text-align: center;
+}
+.skill-box:hover .front {
+  transform: rotateY(180deg);
+}
+.skill-box:hover .back {
+  transform: rotateY(360deg);
+}
         h1 {
             color: #38bdf8;
             text-align: center;
@@ -110,18 +155,23 @@
             margin-top: auto;
             box-shadow: 0px -4px 10px rgba(0, 255, 255, 0.3);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
+        @media screen and (max-width: 768px) {
+  .skills-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+}
             to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+        
+    
+</style>
 </head>
 <body>
     <header>Skills</header>
 
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
@@ -131,11 +181,25 @@
         <center><p>As a passionate and curious engineering student, I’ve developed foundational technical skills that I'm continuously improving through hands-on projects and learning platforms.</p></center><br><br>
 
         <div class="skills-wrapper">
-            <div class="skill-box"><b>HTML & CSS</b><p>Creating simple and responsive web pages</p></div>
-            <div class="skill-box"><b>Linux</b><p>Basic command line usage and scripting</p></div>
-            <div class="skill-box"><b>Python</b><p>Beginner level-working with basic scripts</p></div>
-            <div class="skill-box"><b>C Programming</b><p>Good understanding of fundamentals and logic building</p></div>
-        </div><br><br>
+  <div class="skill-box" style="transform: translateX(-60px);">
+    <div class="front"><b>HTML & CSS</b></div>
+    <div class="back">Creating simple and responsive web pages</div>
+  </div>
+  <div class="skill-box" style="transform: translateX(30px);">
+    <div class="front" style="font-size: 23px;"><b>Linux</b></div>
+    <div class="back">Basic command line usage and scripting</div>
+  </div>
+  <div class="skill-box" style="transform: translateX(-60px); margin-top: 10px;">
+    <div class="front" style="font-size: 23px;"><b>Python</b></div>
+    <div class="back">Beginner level-working with basic scripts</div>
+  </div>
+  <div class="skill-box" style="transform: translateX(30px); margin-top: 10px;">
+    <div class="front"><b>C Programming</b></div>
+    <div class="back">Good understanding of fundamentals and logic building
+
+</div>
+  </div>
+</div><br><br><br><br><br>
       <p><b>🤝 Soft Skills :</b><br>
          <b>Communication</b> : Able to explain technical concepts clearly.<br>
 
