@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: white;
+    }
+
+    header {
+      padding: 20px;
+      background: rgba(30, 41, 59, 0.9);
+      color: white;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+    }
+
+    nav {
+      width: 100%;
+      background: rgba(30, 41, 59, 0.9);
+      padding: 10px 0;
+      box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.3);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(to right, #38bdf8, #0ea5e9);
+      transition: width 0.3s ease;
+      border-radius: 5px;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+      text-shadow: 0 0 10px #38bdf8;
+      background: rgba(56, 189, 248, 0.15);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: rgba(30, 41, 59, 0.9);
+      border-radius: 20px;
+      margin-top: 50px;
+      box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.5);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #38bdf8;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 50px 0;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #38bdf8, #0ea5e9);
+    }
+
+    .timeline-box {
+      background: linear-gradient(to bottom right, #1e3a8a, #3b82f6);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+      position: relative;
+      margin: 30px 0;
+      margin-left: 40px;
+      transition: 0.3s ease-in-out;
+    }
+
+    .timeline-box h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+
+    .timeline-box p {
+      margin: 10px 0;
+      color: #e2e8f0;
+    }
+
+    .view-detail-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #0ea5e9;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #1e293b;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      max-width: 500px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .popup h3 {
+      margin-top: 0;
+      color: white;
+    }
+
+    .popup p, .popup ul {
+      color: #e2e8f0;
+    }
+
+    .popup ul {
+      padding-left: 20px;
+    }
+
+    .popup ul li {
+      margin-bottom: 8px;
+    }
+
+    .close-btn {
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>Experience</header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>My Experience</h1>
+    <p class="description">Here is a timeline of my professional journey, where I’ve gained hands-on experience and honed my development skills.</p>
+
+    <div class="timeline">
+      <div class="timeline-box">
+        <h2>AI & IBM Cloud Technologies Intern</h2>
+        <p>Edunet Foundation | IBM SkillsBuild (AICTE)</p><p>July 2025 – August 2025</p>
+        <button class="view-detail-btn" onclick="openPopup('popup1')">View Details</button>
+      </div>
+
+      <div class="timeline-box">
+        <h2>Cisco Intern</h2>
+        <p>Cisco Virtual Internship Program (VIP)</P><p>June 2025 - July 2025</p>
+        <button class="view-detail-btn" onclick="openPopup('popup2')">View Details</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="popup1" class="popup">
+    <h3>AI & IBM Cloud Technologies Intern - Details</h3>
+    <p><strong>Edunet Foundation | IBM SkillsBuild (facilitated by AICTE)</strong></p>
+    <h4>📝 Overview:</h4>
+    <p>A 4-week mentor-led internship under the AICTE virtual internship initiative. The program emphasized hands-on projects in IBM Cloud and Artificial Intelligence, backed with official offer letter and certificate.</p>
+    <h4>🔧 Tools & Technologies Explored:</h4>
+    <ul>
+      <li>Watson AutoAI – Used for crop recommendation models</li>
+      <li>IBM watsonx Assistant – Built a functional chatbot</li>
+      <li>RAG with LangChain – Retrieval-Augmented Generation pipeline</li>
+      <li>Agentic AI – Leveraged IBM InstructLab + Vision Models</li>
+      <li>IBM Data Refinery, Cloud Object Storage, and Data Prep Toolkit</li>
+    </ul>
+    <h4>📌 Final Project:</h4>
+    <p>Designed an Agentic RAG System that integrates:</p>
+    <ul>
+      <li>🔗 watsonx Prompt Lab</li>
+      <li>🔗 InstructLab agents</li>
+      <li>🔗 LangChain orchestration</li>
+    </ul>
+   <h4>📚 Courses Completed:</h4>
+<ul>
+  <li>📘 Getting Started with Artificial Intelligence<br><a href="https://drive.google.com/file/d/1ARzsbessRFnkxY7Uek9McflQ-o14lVIx/view?usp=sharing" target="_blank">🏅 Certificate</a></li>
+  <li>📘 Journey to Cloud<br><a href="https://drive.google.com/file/d/1qeQ8pG8ZGN9-R1CbEX8H8n17AQ9cHxCH/view?usp=sharing" target="_blank">🏅 Certificate</a></li>
+  <li>📘 Lab: Retrieval Augmented Generation with LangChain<br><a href="#" target="_blank">🏅 Certificate</a></li>
+</ul>
+    <h4>💡 Skills Gained:</h4>
+    <p>IBM Cloud, AI, Python, Prompt Engineering, AutoAI, LangChain, InstructLab</p>
+    <button class="close-btn" onclick="closePopup('popup1')">Close</button>
+  </div>
+
+  <div id="popup2" class="popup">
+    <h3>Cisco Virtual Internship Program (VIP) - Details</h3>
+    <p>The VIP was a revolutionary attempt to virtualize the traditional internship model which allows scalability in Networking. In this model
+I gain technical knowledge and skills by completing Cisco Networking Academy courses in an identified track.
+I learned to use the powerful network simulation tool – Packet Tracer.
+I participated in an industry session hosted by Cisco experts and leaders which coverd topics from enabling global skills to careers in cybersecurity and networking.
+</p>
+    <h4>📚 Courses Completed:</h4>
+<ul>
+  <li>📘 Introduction to Cybersecurity<br><a href="https://drive.google.com/file/d/1wZZngnS19hu47LGOYEicsCrJWiP1peA-/view?usp=sharing" target="_blank">🏅 Certificate</a></li>
+  <li>📘 Networking Essentials<br><a href="https://drive.google.com/file/d/1xxL66dOtBV9nZda-sV-hGhW7ACWUg6gL/view?usp=sharing" target="_blank">🏅 Certificate</a></li>
+</ul>
+    <h4>📝 Overview:</h4>
+    <ul>
+  <li>📘 Cisco Networking Academy Profile<br><a href="https://www.netacad.com/profile?tab=badges" target="_blank">👤 Profile</a></li>
+</ul>
+    <button class="close-btn" onclick="closePopup('popup2')">Close</button>
+  </div>
+
+  <script>
+    function openPopup(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function closePopup(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>
