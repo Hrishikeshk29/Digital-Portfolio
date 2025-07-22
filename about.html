@@ -41,24 +41,41 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
         }
         nav ul li {
             display: inline;
         }
         nav ul li a {
+            position: relative;
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            transition: color 0.3s, text-shadow 0.3s;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            background-color: #38bdf8;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease-in-out;
+        }
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
         nav ul li a:hover {
             color: #38bdf8;
-            text-shadow: 0px 0px 15px #38bdf8;
-            background: rgba(56, 189, 248, 0.2);
+            background-color: rgba(56, 189, 248, 0.1);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
         }
         .content {
             width: 75%;
@@ -101,6 +118,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="skills.html">Skills</a></li>
+            <li><a href="coding.html">Coding Profile</a></li>
         </ul>
     </nav>
 
