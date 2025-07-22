@@ -49,83 +49,170 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            transition: color 0.3s, text-shadow 0.3s;
             padding: 10px;
             border-radius: 5px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, #38bdf8, #0ea5e9);
+            transition: width 0.3s ease;
+            border-radius: 5px;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
         }
         nav ul li a:hover {
             color: #38bdf8;
-            text-shadow: 0px 0px 15px #38bdf8;
-            background: rgba(56, 189, 248, 0.2);
+            text-shadow: 0 0 10px #38bdf8;
+            background: rgba(56, 189, 248, 0.15);
         }
         .content {
-            width: 50%;
-            background: rgba(30, 41, 59, 0.9);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.5);
+            width: 60%;
+            background: rgba(30, 41, 59, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 40px rgba(0, 255, 255, 0.6);
             margin: 80px 0;
-            text-align: left;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h1 {
+            font-size: 32px;
+            color: #38bdf8;
+            margin-bottom: 30px;
+            text-transform: uppercase;
         }
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
-        .contact-form input {
+        .contact-form input, .contact-form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
         }
         .contact-form button {
-            background: #38bdf8;
+            background: linear-gradient(to right, #38bdf8, #0ea5e9);
             color: white;
             font-size: 18px;
             font-weight: bold;
             border: none;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 12px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .contact-form button:hover {
-            background: #0ea5e9;
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(56, 189, 248, 0.5);
+        }
+        .toast {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #38bdf8;
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            font-weight: bold;
+            z-index: 999;
+        }
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .social-icons img:hover {
+            transform: scale(1.2);
         }
         footer {
             height: 50px;
             background: rgba(30, 41, 59, 0.9);
             width: 100%;
             margin-top: auto;
+            box-shadow: 0px -4px 10px rgba(0, 255, 255, 0.3);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
     <header>Contact</header>
-    
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html">Experience</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="achievements.html">Achievements</a></li>
         </ul>
     </nav>
-    
+
     <div class="content">
         <h1>Contact Me</h1>
-        <form class="contact-form">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="tel" name="phone" placeholder="Your Contact Number" required>
-            <button type="submit">Submit</button>
+            <textarea name="message" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
         </form>
+
+        <div class="social-icons">
+            <a href="mailto:koshtihrishikesh41@gmail.com" target="_blank"><img src="google-mail-gmail-icon-logo-symbol-free-png.webp" alt="Gmail"></a>
+            <a href="https://www.linkedin.com/in/hrishikesh-koshti-506107334/" target="_blank"><img src="hd_resized_linkedin_logo.jpg" alt="LinkedIn"></a>
+            <a href="https://github.com/Hrishikeshk29" target="_blank"><img src="github.jpg" alt="GitHub"></a>
+        </div>
     </div>
-    
+
+    <div class="toast" id="toast">Message sent successfully!</div>
+
     <footer></footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const toast = document.getElementById("toast");
+            toast.style.display = "block";
+
+            // Clear form fields
+            form.reset();
+
+            setTimeout(() => {
+                toast.style.display = "none";
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
